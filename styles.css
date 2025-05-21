@@ -151,16 +151,24 @@ main {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .portfolio-item {
     aspect-ratio: 2/3;
     overflow: hidden;
     background: #111;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
 }
 
 .portfolio-item img {
@@ -168,6 +176,11 @@ main {
     height: 100%;
     object-fit: cover;
     transform: scale(1.01);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
 }
 
 .portfolio-modal {
@@ -250,7 +263,9 @@ main {
 
 @media (max-width: 768px) {
     .portfolio-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 1rem;
+        padding: 0 0.5rem;
     }
 
     .modal-close {
@@ -259,107 +274,13 @@ main {
     }
 }
 
-.personal-styling {
+.contato {
     padding: 4rem 1rem;
     min-height: 100vh;
-    background: #000;
-}
-
-.personal-styling h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-}
-
-.styling-text {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    font-size: 1.2rem;
-    color: #999;
-}
-
-.styling-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.styling-item {
-    position: relative;
-    aspect-ratio: 3/4;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.styling-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    transition: transform 0.5s ease;
-}
-
-.styling-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 1.5rem;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-}
-
-.styling-item:hover .styling-overlay {
-    transform: translateY(0);
-}
-
-.styling-item:hover img {
-    transform: scale(1.05);
-}
-
-.styling-overlay h3 {
-    color: white;
-    font-size: 1.3rem;
-    text-align: center;
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-    .styling-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .styling-text {
-        font-size: 1rem;
-        padding: 0 1rem;
-    }
-
-    .styling-overlay {
-        transform: translateY(0);
-        padding: 1rem;
-    }
-
-    .styling-overlay h3 {
-        font-size: 1.1rem;
-    }
-}
-
-.contato {
-    padding: 6rem 1rem;
-    min-height: 80vh;
     background: #000;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .contato h2 {
